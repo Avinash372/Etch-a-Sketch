@@ -1,3 +1,5 @@
+let color = "black";
+
 function populateBoard(size) {
   let board = document.querySelector(".board");
   let squares = board.querySelectorAll("div");
@@ -24,6 +26,19 @@ function changeSize(input) {
   }
 }
 
+function randomRgbColor() {
+  let rng = Math.floor(Math.random() * 256);
+  return rng;
+}
+
 function colorSquare() {
-  this.style.backgroundColor = "#000";
+  if (color === "random") {
+    this.style.backgroundColor = `rgb(${randomRgbColor()},${randomRgbColor()},${randomRgbColor()})`;
+  } else {
+    this.style.backgroundColor = color;
+  }
+}
+
+function changeColor(choice) {
+  color = choice;
 }
