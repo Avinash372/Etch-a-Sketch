@@ -20,9 +20,10 @@ function populateBoard(size) {
 
 function changeSize(input) {
   if (input >= 2 && input <= 100) {
+    document.querySelector(".error").style.display = "none";
     populateBoard(input);
   } else {
-    console.log("enter number between 2 and 100");
+    document.querySelector(".error").style.display = "flex";
   }
 }
 
